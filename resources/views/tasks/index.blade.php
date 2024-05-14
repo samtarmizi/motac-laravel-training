@@ -24,7 +24,7 @@
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
                                     <td>
-                                        <a href="" class="btn btn-primary">View</a>
+                                        <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>
                                         <a href="" class="btn btn-success">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>

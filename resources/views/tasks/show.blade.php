@@ -20,6 +20,9 @@
                                 readonly
                         >{{ $task->description }}</textarea>
                     </div>
+                    <div class="form-group">
+                        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Back to Index Tasks</a>
+                    </div>
                 </div>
             </div>
         </div>
