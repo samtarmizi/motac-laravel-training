@@ -13,7 +13,13 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        // query using ORM Eloquent Task model
+        $tasks = Task::all();
+
+        // return to view with $tasks
+        // resources/views/tasks/index.blade.php + $tasks
+        return view('tasks.index', compact('tasks'));
+
     }
 
     /**
