@@ -27,7 +27,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        // show form tasks/create.blade.php
+        return view('tasks.create');
     }
 
     /**
