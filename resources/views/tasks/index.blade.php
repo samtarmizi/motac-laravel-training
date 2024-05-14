@@ -6,7 +6,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Index Tasks') }}
-                    <a href="{{ route('tasks.create') }}" class="btn btn-primary"> + Create Task</a>
+                    <span style="float:right;">
+                        <a href="{{ route('tasks.create') }}" class="btn btn-light">+ Create Task</a>
+                    </span>
+                    
                 </div>
 
                 <div class="card-body">
