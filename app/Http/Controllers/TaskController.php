@@ -36,7 +36,15 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        // store in database using Model Task
+        // POPO - Plain Old PHP Object
+        $task = new Task();
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->save();
+
+        // return to index tasks
+        return redirect()->route('tasks.index');
     }
 
     /**
