@@ -11,15 +11,23 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Task ID</th>
                                 <th>Task Title</th>
                                 <th>Task Description</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($tasks as $task)
                                 <tr>
+                                    <td>{{ $task->id }}</td>
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-primary">View</a>
+                                        <a href="" class="btn btn-success">Edit</a>
+                                        <a href="" class="btn btn-danger">Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
