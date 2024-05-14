@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Index Tasks') }}</div>
+                <div class="card-header">{{ __('Index Tasks') }}
+                    <a href="{{ route('tasks.create') }}" class="btn btn-primary"> + Create Task</a>
+                </div>
 
                 <div class="card-body">
                     <table class="table">

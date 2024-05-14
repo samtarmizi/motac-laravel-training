@@ -24,6 +24,7 @@
                         </div>
                         <div class="form-group mt-2">
                             <button type="submit" class="btn btn-primary">Store my Form</button>
+                            <a href="{{ route('tasks.index') }}" class="btn btn-info">Cancel</a>
                         </div>
                     </form> 
                 </div>
