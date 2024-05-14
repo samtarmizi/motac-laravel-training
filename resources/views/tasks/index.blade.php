@@ -30,7 +30,7 @@
                                     <td>{{ $task->description }}</td>
                                     <td>
                                         <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>
-                                        <a href="" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('tasks.edit', $task) }}" class="btn btn-success">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>

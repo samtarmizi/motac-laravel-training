@@ -60,7 +60,8 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        // resources/views/tasks/edit.blade.php + $task
+        return view('tasks.edit', compact('task'));
     }
 
     /**
