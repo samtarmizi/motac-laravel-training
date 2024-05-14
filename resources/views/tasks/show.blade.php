@@ -18,7 +18,7 @@
                                 class="form-control" 
                                 rows="5"
                                 readonly
-                        >{{ $task->title }}</textarea>
+                        >{{ $task->description }}</textarea>
                     </div>
                 </div>
             </div>
