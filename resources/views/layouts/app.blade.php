@@ -31,7 +31,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.create') }}">{{ __('Tasks Create') }}</a>
+                            <a class="nav-link" href="{{ route('tasks.index') }}">{{ __('Tasks Management') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

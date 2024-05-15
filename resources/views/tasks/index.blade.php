@@ -19,6 +19,7 @@
                                 <th>Task ID</th>
                                 <th>Task Title</th>
                                 <th>Task Description</th>
+                                <th>User</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -28,6 +29,7 @@
                                     <td>{{ $task->id }}</td>
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
+                                    <td>{{ $task->user->name }}</td>
                                     <td>
                                         <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>
                                         <a href="{{ route('tasks.edit', $task) }}" class="btn btn-success">Edit</a>

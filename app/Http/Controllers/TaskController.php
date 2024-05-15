@@ -8,13 +8,19 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // query using ORM Eloquent Task model
-        $tasks = Task::all();
+        // get tasks from authenticated user
+        $user = auth()->user();
+        $tasks = $user->tasks;
 
         // return to view with $tasks
         // resources/views/tasks/index.blade.php + $tasks
@@ -41,6 +47,7 @@ class TaskController extends Controller
         $task = new Task();
         $task->title = $request->title;
         $task->description = $request->description;
+        $task->user_id = auth()->user()->id;
         $task->save();
 
         // return to index tasks
