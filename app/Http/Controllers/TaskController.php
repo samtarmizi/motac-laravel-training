@@ -59,6 +59,8 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
+        $this->authorize('view', $task);
+
         return view('tasks.show', compact('task'));
     }
 
@@ -76,6 +78,8 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
+        $this->authorize('update', $task);
+
         $task->title = $request->title;
         $task->description = $request->description;
         $task->save();
@@ -88,6 +92,13 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        $this->authorize('delete', $task);
+
+        // $user = auth()->user();
+        // if($user->id != $task->user_id) {
+        //     abort(403);
+        // }
+
         $task->delete();
 
         return redirect()->route('tasks.index');
