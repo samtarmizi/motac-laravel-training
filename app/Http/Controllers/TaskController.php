@@ -19,8 +19,10 @@ class TaskController extends Controller
     public function index()
     {
         // get tasks from authenticated user
-        $user = auth()->user();
-        $tasks = $user->tasks;
+        // $user = auth()->user();
+        // $tasks = $user->tasks;
+
+        $tasks = Task::all();
 
         // return to view with $tasks
         // resources/views/tasks/index.blade.php + $tasks

@@ -31,9 +31,15 @@
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->user->name }}</td>
                                     <td>
-                                        <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>
-                                        <a href="{{ route('tasks.edit', $task) }}" class="btn btn-success">Edit</a>
-                                        <a onclick="return confirm('Are you sure to delete')" href="{{ route('tasks.destroy', $task) }}" class="btn btn-danger">Delete</a>
+                                        @can('view', $task)
+                                            <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>
+                                        @endcan
+                                        @can('update', $task)
+                                            <a href="{{ route('tasks.edit', $task) }}" class="btn btn-success">Edit</a>
+                                        @endcan
+                                        @can('delete', $task)
+                                            <a onclick="return confirm('Are you sure to delete')" href="{{ route('tasks.destroy', $task) }}" class="btn btn-danger">Delete</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
