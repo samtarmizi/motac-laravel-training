@@ -30,3 +30,4 @@ Route::post('/tasks/create', [TaskController::class, 'store'])->name('tasks.stor
 Route::get('/tasks/{task}', [TaskController::class, 'show'])->name('tasks.show');
 Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
 Route::post('/tasks/{task}/edit', [TaskController::class, 'update'])->name('tasks.update');
+Route::get('/tasks/{task}/delete', [TaskController::class, 'destroy'])->name('tasks.destroy');
