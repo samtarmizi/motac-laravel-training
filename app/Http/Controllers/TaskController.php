@@ -69,7 +69,11 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        //
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->save();
+
+        return redirect()->route('tasks.index');
     }
 
     /**
