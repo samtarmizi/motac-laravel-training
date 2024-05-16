@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use App\Mail\TaskCreatedMail;
+use Illuminate\Support\Facades\Mail;
 
 class TaskController extends Controller
 {
@@ -51,6 +53,9 @@ class TaskController extends Controller
         $task->description = $request->description;
         $task->user_id = auth()->user()->id;
         $task->save();
+
+        // send email to user
+        Mail::to($task->user->email)->send(new TaskCreatedMail($task));
 
         // return to index tasks
         return redirect()->route('tasks.index');
