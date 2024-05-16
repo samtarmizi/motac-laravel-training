@@ -20,11 +20,15 @@ class TaskController extends Controller
      */
     public function index()
     {
+        \info(auth()->user()->name.' click tasks index');
+
         // get tasks from authenticated user
         // $user = auth()->user();
         // $tasks = $user->tasks;
 
         $tasks = Task::all();
+
+        \info('User has ' . $tasks->count() . ' tasks');
 
         // return to view with $tasks
         // resources/views/tasks/index.blade.php + $tasks
@@ -37,6 +41,8 @@ class TaskController extends Controller
      */
     public function create()
     {
+        \info('User click tasks create');
+
         // show form tasks/create.blade.php
         return view('tasks.create');
     }
@@ -67,6 +73,8 @@ class TaskController extends Controller
     public function show(Task $task)
     {
         $this->authorize('view', $task);
+
+        \info(auth()->user()->name.' click tasks show '. $task->id);
 
         return view('tasks.show', compact('task'));
     }
