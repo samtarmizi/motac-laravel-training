@@ -43,9 +43,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tasks as $task)
+                            @foreach($tasks as $key => $task)
                                 <tr>
-                                    <td>{{ $task->id }}</td>
+                                    <td>{{ $key + 1 }}</td>
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->user->name }}</td>
