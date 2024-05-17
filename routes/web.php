@@ -31,3 +31,4 @@ Route::get('/tasks/{task}', [TaskController::class, 'show'])->name('tasks.show')
 Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
 Route::post('/tasks/{task}/edit', [TaskController::class, 'update'])->name('tasks.update');
 Route::get('/tasks/{task}/delete', [TaskController::class, 'destroy'])->name('tasks.destroy');
+Route::get('/tasks/{task}/force-delete', [TaskController::class, 'forceDestroy'])->name('tasks.force-destroy');

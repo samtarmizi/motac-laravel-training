@@ -58,6 +58,8 @@
                                         @endcan
                                         @can('delete', $task)
                                             <a onclick="return confirm('Are you sure to delete')" href="{{ route('tasks.destroy', $task) }}" class="btn btn-danger">Delete</a>
+                                            <a onclick="return confirm('Are you sure to force delete')" href="{{ route('tasks.force-destroy', $task) }}" class="btn btn-danger">FORCE Delete</a>
+
                                         @endcan
                                     </td>
                                 </tr>

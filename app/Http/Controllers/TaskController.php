@@ -125,4 +125,18 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
+
+    public function forceDestroy(Task $task)
+    {
+        $this->authorize('delete', $task);
+
+        // $user = auth()->user();
+        // if($user->id != $task->user_id) {
+        //     abort(403);
+        // }
+
+        $task->forceDelete();
+
+        return redirect()->route('tasks.index');
+    }
 }
