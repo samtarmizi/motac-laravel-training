@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use App\Mail\TaskCreatedMail;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class TaskController extends Controller
 {
@@ -28,11 +29,13 @@ class TaskController extends Controller
 
         $tasks = Task::all();
 
+        $users = User::all();
+
         \info('User has ' . $tasks->count() . ' tasks');
 
         // return to view with $tasks
         // resources/views/tasks/index.blade.php + $tasks
-        return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks', 'users'));
 
     }
 
@@ -41,6 +44,8 @@ class TaskController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Task::class);
+        
         \info('User click tasks create');
 
         // show form tasks/create.blade.php

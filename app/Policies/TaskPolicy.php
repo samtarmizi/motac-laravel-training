@@ -30,7 +30,9 @@ class TaskPolicy
      */
     public function create(User $user): bool
     {
-        //
+        $tasks = Task::all();
+
+        return ($tasks->count() < 7);
     }
 
     /**
