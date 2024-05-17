@@ -39,6 +39,7 @@
                                 <th>Task Title</th>
                                 <th>Task Description</th>
                                 <th>User</th>
+                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -49,6 +50,7 @@
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->user->name }}</td>
+                                    <td>{{ $task->created_at->diffForHumans() }}</td>
                                     <td>
                                         @can('view', $task)
                                             <a href="{{ route('tasks.show', $task) }}" class="btn btn-primary">View</a>

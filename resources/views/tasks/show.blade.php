@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Tasks Show') }}</div>
+                <div class="card-header">{{ __('Tasks Show') }} by {{ $task->user->name }}</div>
 
                 <div class="card-body">
                     <div class="form-group">
@@ -23,6 +23,15 @@
                     <div class="form-group">
                         <a href="{{ route('tasks.index') }}" class="btn btn-primary">Back to Index Tasks</a>
                     </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">{{ __('Tasks Show') }}</div>
+
+                <div class="card-body">
+                    @foreach($task->audits as $audit)
+                        {{ $audit->event}} - {{ $audit->created_at }}<br>
+                    @endforeach
                 </div>
             </div>
         </div>
